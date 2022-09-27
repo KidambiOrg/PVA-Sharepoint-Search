@@ -20,7 +20,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PowerApps", "PowerApps", "{
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PowerShellScripts", "PowerShellScripts", "{F5FAE596-FFE3-4F84-9125-1A8CBF964C89}"
 	ProjectSection(SolutionItems) = preProject
-		Add_Site_AppCatalog.ps1 = Add_Site_AppCatalog.ps1
+		PowerShell Scripts\Add_Site_AppCatalog.ps1 = PowerShell Scripts\Add_Site_AppCatalog.ps1
 		PowerShell Scripts\Update_BotProperties.ps1 = PowerShell Scripts\Update_BotProperties.ps1
 	EndProjectSection
 EndProject
