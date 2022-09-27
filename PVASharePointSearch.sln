@@ -8,12 +8,21 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{06C64062-93B1-404C-B28D-AFBA3EC7B823}"
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
+		Architecture.png = Architecture.png
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PVASharePointSearch.Models", "PVASharePointSearch.Models\PVASharePointSearch.Models.csproj", "{2E4490C6-1BAF-4EEE-B34C-8A4E75388A12}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PVASharePointSearch.Models", "PVASharePointSearch.Models\PVASharePointSearch.Models.csproj", "{2E4490C6-1BAF-4EEE-B34C-8A4E75388A12}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PVASharePointSearch.Business", "PVASharePointSearch.Business\PVASharePointSearch.Business.csproj", "{BD29E851-BCF0-411A-AC40-7A600A63A867}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PVASharePointSearch.Business", "PVASharePointSearch.Business\PVASharePointSearch.Business.csproj", "{BD29E851-BCF0-411A-AC40-7A600A63A867}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PowerApps", "PowerApps", "{9B37A15B-A187-475E-A9A1-B298BE663F55}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PowerShellScripts", "PowerShellScripts", "{F5FAE596-FFE3-4F84-9125-1A8CBF964C89}"
+	ProjectSection(SolutionItems) = preProject
+		Add_Site_AppCatalog.ps1 = Add_Site_AppCatalog.ps1
+		PowerShell Scripts\Update_BotProperties.ps1 = PowerShell Scripts\Update_BotProperties.ps1
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

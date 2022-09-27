@@ -1,0 +1,18 @@
+PFX for SharePoint
+
+NODE version needs to be 14.15.0
+
+
+1. Setup Dev Environment 
+	https://learn.microsoft.com/en-us/sharepoint/dev/spfx/set-up-your-development-environment
+
+2. Add app catalog to YOUR SITE. 
+	2.a install PNP module in PowerShell
+	    Install-Module PnP.PowerShell
+	2.b Connect to site and enable App catalog
+	   $conn = Connect-PNPOnline -url [SITE URL] -interactive -ReturnConnection
+	   Add-PNPSiteCollectionAppCatalog -Connection $conn 
+3.Clone this repo
+    https://github.com/pankajsurti/dl-bot-app-customizer
+4. Run Npm install from the packages folder
+
