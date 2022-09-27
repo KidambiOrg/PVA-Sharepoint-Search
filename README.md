@@ -18,7 +18,7 @@ This solution works both in Azure Commercial and Azure Gov.
 1. Need to be an admin on SharePoint
 2. Site needs to be enabled for App Catalog (to upload the SharePoint Extension)
    1. It is recommended to upload the extension to individual sites as default
-   2. Please refer to this [script](/PowerShellScript/Add_Site_AppCatalog.ps1) on how to enable App Catalog
+   2. Please refer to this [script](/PowerShell%20Scripts/Add_Site_AppCatalog.ps1) on how to enable App Catalog
 
 ### Software Requirements
 1. `node.js` (specific version - 14.15.0)
