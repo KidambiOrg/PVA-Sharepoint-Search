@@ -28,5 +28,8 @@ This solution works both in Azure Commercial and Azure Gov.
 5. [SPFx Extension](https://github.com/pankajsurti/dl-bot-app-customizer)
 
 ## Credits
+
+The credit for having a PVA in SharePoint goes to the author of the below blog, without whose help this solution would not have been possible.
+
 1. [How to add PVA to SharePoint](https://pankajsurti.com/2022/02/03/how-to-add-power-virtual-agent-pva-bot-to-a-sharepoint-page/)
 2. [SPFx Extension](https://github.com/pankajsurti/dl-bot-app-customizer)
