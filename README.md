@@ -25,6 +25,7 @@ This solution works both in Azure Commercial and Azure Gov.
 2. VS Code
 2. Visual Studio 2022
 4. .NET 6
+5. [SPFx Extension](https://github.com/pankajsurti/dl-bot-app-customizer)
 
 ## Credits
 1. [How to add PVA to SharePoint](https://pankajsurti.com/2022/02/03/how-to-add-power-virtual-agent-pva-bot-to-a-sharepoint-page/)
