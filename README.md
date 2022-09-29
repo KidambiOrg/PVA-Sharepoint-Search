@@ -27,6 +27,10 @@ This solution works both in Azure Commercial and Azure Gov.
 4. .NET 6
 5. [SPFx Extension](https://github.com/pankajsurti/dl-bot-app-customizer)
 
+## References
+1. [Knowledge mining using Cognitive Search](https://learn.microsoft.com/en-us/samples/azure-samples/azure-search-knowledge-mining/azure-search-knowledge-mining/)
+2. [Adding custom fields to Search Index for click through experience](https://techcommunity.microsoft.com/t5/ai-customer-engineering-team/mine-knowledge-from-audio-files-with-microsoft-ai/ba-p/781957)
+
 ## Credits
 
 The credit for having a PVA in SharePoint goes to the author of the below blog, without whose help this solution would not have been possible.
