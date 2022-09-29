@@ -1,9 +1,0 @@
-{
-  "profiles": {
-    "PVASharePointSearch.API": {
-      "commandName": "Project",
-      "commandLineArgs": "--port 7283",
-      "launchBrowser": false
-    }
-  }
-}
