@@ -1,4 +1,4 @@
-# Search SharePoint using PVA and SharePoint Extensions (SPFX)
+# Search SharePoint files (documents, images, audio and video files) - PVA and SharePoint Extensions (SPFX)
 
 ## Constraints
 At the time of developing this, the Cognitive Search for SharePoint was in Preview and needed approval process. Till that becomes GA, we can use this methodology.
