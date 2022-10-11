@@ -57,12 +57,15 @@ There are 2 parts to this flow. This solution supports uploading and searching w
 ## Setup
 
 ### Power Apps Solution
-1. Download the zip file from `PowerApps` folder
+1. Download the zip file from [PowerApps](/PowerApps) folder
 2. Follow instructions [here](https://learn.microsoft.com/en-us/power-apps/maker/data-platform/import-update-export-solutions) to have it imported to your environment
    
 
 
 ### Setup PVA in SharePoint
+
+Setup Dev environment for [SPFX development](https://learn.microsoft.com/en-us/sharepoint/dev/spfx/set-up-your-development-environment)
+
 
 #### Create SPFX for PVA
 

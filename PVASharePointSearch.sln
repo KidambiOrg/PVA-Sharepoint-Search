@@ -11,8 +11,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PowerApps", "PowerApps", "{9B37A15B-A187-475E-A9A1-B298BE663F55}"
+	ProjectSection(SolutionItems) = preProject
+		PowerApps\PVASearchSharePoint_1_0_0_0.zip = PowerApps\PVASearchSharePoint_1_0_0_0.zip
+	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PowerShellScripts", "PowerShellScripts", "{F5FAE596-FFE3-4F84-9125-1A8CBF964C89}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PowerShell Scripts", "PowerShell Scripts", "{F5FAE596-FFE3-4F84-9125-1A8CBF964C89}"
 	ProjectSection(SolutionItems) = preProject
 		PowerShell Scripts\Add_Site_AppCatalog.ps1 = PowerShell Scripts\Add_Site_AppCatalog.ps1
 		PowerShell Scripts\Update_BotProperties.ps1 = PowerShell Scripts\Update_BotProperties.ps1
