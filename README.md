@@ -40,7 +40,7 @@ There are 2 parts to this flow. This solution supports uploading and searching w
 
 1. Go to SharePoint site and upload a file (document or image or audio or video) to a document folder
 2. A logic is triggerred and retrieves the file contents
-   1. For audio and video files, the Logic App puts the content in a separate audiovideo storage container, call Video Indexers, get the transcribed text and puts them in the main document container
+   1. For audio and video files, the Logic App puts the content in a separate audiovideo storage container, calls Video Indexers, get the transcribed text and puts them in the main document container
    2. For documents and images, the logic App puts the content in a document container
 3. Then kicks of another Logic App, passing the file name and SharePoint path. This logic app will update the Cognitive Search Index with these parameters
    1. This is done so that when the user searches within a file,a  url of the location of the file is returned and the user can click on it
@@ -52,6 +52,40 @@ There are 2 parts to this flow. This solution supports uploading and searching w
 3. The Power Automate calls Cognitive Search with search parameters
    1. The Cognitive Search results are formatted into a MarkDown format and returned to the bot
 4. The bot displays the result with clickable links to open the file that contains search string
+
+
+## Setup
+
+### Power Apps Solution
+1. Download the zip file from `PowerApps` folder
+2. Follow instructions [here](https://learn.microsoft.com/en-us/power-apps/maker/data-platform/import-update-export-solutions) to have it imported to your environment
+   
+
+
+### Setup PVA in SharePoint
+
+#### Create SPFX for PVA
+
+1. Go to Power Virtual agent and get the Direct line token
+   1. In PVA studio, click on `Manage\Security\Web channel Security` 
+   2. Copy the value of Key 1. This is your direct link token
+2. Clone the [repo](https://github.com/pankajsurti/dl-bot-app-customizer)
+3. Open the folder in VS Code
+4. Open `Sharepoint\assets\ClientSideInstance.xml`
+5. Edit the values in Line 7
+   1. Replace `Sample Bot` with your bot name
+   2. Replace `TODO-ADD-DL-SECRET` with the key gotten from step 1.
+6. Repeat step 5 for the file `elements.xml` 
+7. Now run 
+   1. `npm-install`
+   2. `gulp bundle --ship`
+   3. `gulp package-solution --ship`
+8. This will create a `.sspkg file` in the folder.
+
+#### Deploy the SPFX in SharePoint
+
+1. Follow the instructions here to [upload the package](https://learn.microsoft.com/en-us/sharepoint/use-app-catalog) in to SharePoint App Catalog
+
 
 ## Storage Maintanenace
 Since the files are copied to a storage account, the files are kept along with the files in SharePoint as the Cognitive Search is against Storage account. For audio/video files, that is not needed. So Lifecycle Management (ALM) is set on the container that has the copied audio / video files.
