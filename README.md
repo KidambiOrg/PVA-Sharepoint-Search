@@ -68,13 +68,35 @@ Make sure you have CustomVision resource and model trained.
 1. Deploy the Azure function in this solution
 2. Copy the Function Url and put in the file [CustomVisionSkill.json](CustomVisionSkill.json)
 
-### Cognitive Search Skill for Object detection
+#### How to run the function locally
+This will detect objects using CustomVision
+1. Set the azure function project as startup project
+2. Update all the app settings value
+3. Open REST client
+4. Make a POST call to the function with the below body
+   ```
+    {
+        "values": [
+            {
+                "recordId": "{CAN BE ANY RANDOM VALUE. EXAMPLE: record1}",
+                "data": {
+                    "pages":  [
+                        "{BASE64 ENCODED IMAGE}"
+                    ]
+                }
+            }
+        ]
+    }
+
+   ```
+
+### Setup Cognitive Search Skill for Object detection
 1. After creating a Azure blob based search indexer, index and skill set, edit the skill set and add the contents of the file [CustomVisionSkill.json](CustomVisionSkill.json) to the skillset
 2. Next add the contents of the file [AzureIndex_CustomFieldForObjectDetection.json](AzureIndex_CustomFieldForObjectDetection.json) to the index definition
 3. Finally add the contents of the file [AzureIndexer_Config_ForObjectDetection.json](AzureIndexer_Config_ForObjectDetection.json) to the index configuration
 4. Now, on the indexer, click "Rest" and then "Run" to include these fields
 
-### Power Apps Solution
+### Setup Power Apps Solution
 1. Download the zip file from [PowerApps](/PowerApps) folder
 2. Follow instructions [here](https://learn.microsoft.com/en-us/power-apps/maker/data-platform/import-update-export-solutions) to have it imported to your environment
 
@@ -82,7 +104,7 @@ Make sure you have CustomVision resource and model trained.
 
 Setup Dev environment for [SPFX development](https://learn.microsoft.com/en-us/sharepoint/dev/spfx/set-up-your-development-environment)
 
-#### Create SPFX for PVA
+#### Setup SPFX for PVA
 
 1. Go to Power Virtual agent and get the Direct line token
    1. In PVA studio, click on `Manage\Security\Web channel Security`
