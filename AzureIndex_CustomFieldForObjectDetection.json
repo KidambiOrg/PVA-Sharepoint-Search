@@ -1,0 +1,17 @@
+{
+	//Add this field to the Azure Search Index "fields" array.
+
+	"name": "objectDetectionTags",
+	"type": "Edm.String",
+	"searchable": true,
+	"filterable": true,
+	"retrievable": true,
+	"sortable": true,
+	"facetable": false,
+	"key": false,
+	"indexAnalyzer": null,
+	"searchAnalyzer": null,
+	"analyzer": "standard.lucene",
+	"normalizer": null,
+	"synonymMaps": []
+}

@@ -53,24 +53,39 @@ There are 2 parts to this flow. This solution supports uploading and searching w
    1. The Cognitive Search results are formatted into a MarkDown format and returned to the bot
 4. The bot displays the result with clickable links to open the file that contains search string
 
-
 ## Setup
+
+### AppSettings values for Azure Function
+1. `FUNCTIONS_WORKER_RUNTIME` - should be `dotnet-isolated`
+2. `CustomVision-ProjectId` - should the CustomVision Project Id (you can get it from Settings in the top right of your CustomVision Resource)
+3. `CustomVision-Prediction-Key` - Get this from the project prediction url after the model is published
+4. `CustomVision-Url` - should be `https://{CUSTOM VISION RESOURCE}.cognitiveservices.azure.com/customvision/v3.0/Prediction/{0}/detect/iterations/{1}/image`
+   1.  DO NOT REMOVE {0} AND {1} from the above url
+5. `CustomVision-IterationId` - the *published** iteration id that you want to use. It can be gotten after you publish
+
+### Set up Object Dection SKill function
+Make sure you have CustomVision resource and model trained.
+1. Deploy the Azure function in this solution
+2. Copy the Function Url and put in the file [CustomVisionSkill.json](CustomVisionSkill.json)
+
+### Cognitive Search Skill for Object detection
+1. After creating a Azure blob based search indexer, index and skill set, edit the skill set and add the contents of the file [CustomVisionSkill.json](CustomVisionSkill.json) to the skillset
+2. Next add the contents of the file [AzureIndex_CustomFieldForObjectDetection.json](AzureIndex_CustomFieldForObjectDetection.json) to the index definition
+3. Finally add the contents of the file [AzureIndexer_Config_ForObjectDetection.json](AzureIndexer_Config_ForObjectDetection.json) to the index configuration
+4. Now, on the indexer, click "Rest" and then "Run" to include these fields
 
 ### Power Apps Solution
 1. Download the zip file from [PowerApps](/PowerApps) folder
 2. Follow instructions [here](https://learn.microsoft.com/en-us/power-apps/maker/data-platform/import-update-export-solutions) to have it imported to your environment
-   
-
 
 ### Setup PVA in SharePoint
 
 Setup Dev environment for [SPFX development](https://learn.microsoft.com/en-us/sharepoint/dev/spfx/set-up-your-development-environment)
 
-
 #### Create SPFX for PVA
 
 1. Go to Power Virtual agent and get the Direct line token
-   1. In PVA studio, click on `Manage\Security\Web channel Security` 
+   1. In PVA studio, click on `Manage\Security\Web channel Security`
    2. Copy the value of Key 1. This is your direct link token
 2. Clone the [repo](https://github.com/pankajsurti/dl-bot-app-customizer)
 3. Open the folder in VS Code
@@ -78,8 +93,8 @@ Setup Dev environment for [SPFX development](https://learn.microsoft.com/en-us/s
 5. Edit the values in Line 7
    1. Replace `Sample Bot` with your bot name
    2. Replace `TODO-ADD-DL-SECRET` with the key gotten from step 1.
-6. Repeat step 5 for the file `elements.xml` 
-7. Now run 
+6. Repeat step 5 for the file `elements.xml`
+7. Now run
    1. `npm-install`
    2. `gulp bundle --ship`
    3. `gulp package-solution --ship`
@@ -89,7 +104,6 @@ Setup Dev environment for [SPFX development](https://learn.microsoft.com/en-us/s
 
 1. Follow the instructions here to [upload the package](https://learn.microsoft.com/en-us/sharepoint/use-app-catalog) in to SharePoint App Catalog
 
-
 ## Storage Maintanenace
 Since the files are copied to a storage account, the files are kept along with the files in SharePoint as the Cognitive Search is against Storage account. For audio/video files, that is not needed. So Lifecycle Management (ALM) is set on the container that has the copied audio / video files.
 
@@ -97,6 +111,7 @@ Since the files are copied to a storage account, the files are kept along with t
 1. [Knowledge mining using Cognitive Search](https://learn.microsoft.com/en-us/samples/azure-samples/azure-search-knowledge-mining/azure-search-knowledge-mining/)
 2. [Adding custom fields to Search Index for click through experience](https://techcommunity.microsoft.com/t5/ai-customer-engineering-team/mine-knowledge-from-audio-files-with-microsoft-ai/ba-p/781957)
 3. [Logic Apps Connector for Video Indexer](https://learn.microsoft.com/en-us/azure/azure-video-indexer/logic-apps-connector-arm-accounts)
+4. [Object Detection Skill for Azure Search](https://learn.microsoft.com/en-us/samples/azure-samples/azure-search-power-skills/azure-customvision-sample/)
 
 ## Credits
 

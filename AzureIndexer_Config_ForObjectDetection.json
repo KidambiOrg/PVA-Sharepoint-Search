@@ -1,0 +1,6 @@
+{
+	//Add the below fields to the "OutputFieldMappings" array in the Cog Search Indexer
+
+	"sourceFieldName": "/document/tags",
+	"targetFieldName": "objectDetectionTags"
+}

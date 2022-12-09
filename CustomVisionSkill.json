@@ -1,0 +1,26 @@
+{
+	//Add this skill configuration to the Azure Search Skill sets
+
+	"@odata.type": "#Microsoft.Skills.Custom.WebApiSkill",
+	"name": "#12",
+	"description": null,
+	"context": "/document",
+	"uri": "{URL OF THE AZURE FUNCTION}/api/detectbinary",
+	"httpMethod": "POST",
+	"timeout": "PT30S",
+	"batchSize": 1,
+	"degreeOfParallelism": 1,
+	"inputs": [
+		{
+			"name": "pages",
+			"source": "/document/normalized_images/*/data"
+		}
+	],
+	"outputs": [
+		{
+			"name": "tags",
+			"targetName": "tags"
+		}
+	],
+	"httpHeaders": {}
+}
