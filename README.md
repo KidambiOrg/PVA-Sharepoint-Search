@@ -14,6 +14,9 @@ This solution works both in Azure Commercial and Azure Gov.
 ### User
 1. The user must be admin and have Power Platform license, Power Virtual Agent license, Power Automate, and SharePoint
 
+### PowerShell
+1. Version 7.xx or above needed
+
 ### Azure
 1. The user must have Azure account to create azure resources shown in the diagram
 
